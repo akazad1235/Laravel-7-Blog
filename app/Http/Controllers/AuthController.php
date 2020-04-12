@@ -31,6 +31,7 @@ class AuthController extends Controller
             if ($image->isValid()) {
                 if ($image->getMimeType() === "image/png" || $image->getMimeType() === "image/jpeg") {
                     $image->storeAs('users', $fileName);
+                    
                 } else {
                     $this->errorMessage("Something wrong!");
                     return redirect()->back();

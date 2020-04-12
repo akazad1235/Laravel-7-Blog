@@ -26,6 +26,7 @@
 			<div class="card-body">
 				
 				<a href="{{ route('categories.index') }}" class="btn btn-info">Category</a>
+				<a href="{{ route('post.index') }}" class="btn btn-success">Post</a>
 			
 			</div>
 		</div>

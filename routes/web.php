@@ -43,4 +43,20 @@ Route::group(['middleware'=> 'auth'], function(){
 
 });
 
+// post code here
+
+Route::group(['middleware' => 'auth'], function(){
+
+	Route::prefix('post')->name('post.')->group(function(){
+		Route::get('/', 'admin\postController@index')->name('index');
+		Route::get('/addpost', 'admin\postController@create')->name('create');
+		Route::post('/store', 'admin\postController@store')->name('store');
+
+		Route::get('/edit/{id}','admin\postController@edit')->name('edit');
+		Route::put('/update/{id}','admin\postController@update')->name('update');
+		Route::delete('/delete/{id}', 'admin\postController@destroy')->name('delete');
+
+	});
+});
+
 
